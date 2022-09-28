@@ -1,0 +1,5 @@
+The folder contain the result of kallisto quantification for all sampelsx
+
+kallisto_statistics.R <- R script to perform statistics from Kallisto result
+RSEM_statistics.R <- R script to perform statistics	from RSEM result
+path_abundance.tsv <- a file with a list of paths for abundance result for all samples
