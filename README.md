@@ -25,10 +25,10 @@ Analysis/input/chromosomes.tsv
 
 The Kallisto software requires a gtf file with a specific order, to convert a normal gtf just follow the steps below:
 ```
-awk '( $3 ~ /gene/ )' old.gtf > new.gtf
-awk '( $3 ~ /transcript/ )' old.gtf >> new.gtf
-awk '( $3 ~ /exon/ && $7 ~ /+/ )' old.gtf | sort -k1.10,1.11n -k4,4n >> new.gtf 
-awk '( $3 ~ /exon/ && $7 ~ /-/ )' old.gtf | sort -k1.10,1.11n -k4,4nr >> new.gtf
+awk '( $3 ~ /gene/ )' old.gtf > kallisto.gtf
+awk '( $3 ~ /transcript/ )' old.gtf >> kallisto.gtf
+awk '( $3 ~ /exon/ && $7 ~ /+/ )' old.gtf | sort -k1.10,1.11n -k4,4n >> kallisto.gtf 
+awk '( $3 ~ /exon/ && $7 ~ /-/ )' old.gtf | sort -k1.10,1.11n -k4,4nr >> kallisto.gtf
 ```
 An example of this file can be found in the following path:
 ```
