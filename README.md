@@ -44,8 +44,15 @@ Analysis/input/transcript.fa
 
 ## 3 - Create the conda environment from the kallisto_environment.yaml
 
-this step will allow you to create a conda environment from which you can use the kallisto software, using the following command from the base directory:
+this step will allow you to create and run a conda environment from which you can use the kallisto software, using the following command from the base directory:
 ```
 conda env create --name kallisto --file kallisto_environment.yaml
+conda activate kallisto
 ```
 
+## 4 - Generate the file list
+
+the creation of the file input_file_list.txt, will allow you to have a list of all the files in the sample_input folder, making them accessible to Kallisto
+```
+python3 generate_list.py
+```
