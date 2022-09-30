@@ -44,19 +44,37 @@ Analysis/input/transcript.fa
 
 ## 3 - Create the conda environment from the kallisto_environment.yaml
 
-this step will allow you to create and run a conda environment from which you can use the kallisto software, using the following command from the base directory:
+This step will allow you to create and run a conda environment from which you can use the kallisto software and parallel to run multiple jobs, using the following command from the base directory:
 ```
-conda create --name kallisto kallisto==0.48.0
+conda create --name kallisto kallisto==0.48.0 parallel==20220922
 conda activate kallisto
 ```
 
 ## 4 - Generate the file list
 
-the creation of the file input_file_list.txt, will allow you to have a list of all the files in the sample_input folder, making them accessible to Kallisto
+The creation of the file input_file_list.txt, will allow you to have a list of all the files in the sample_input folder, making them accessible to Kallisto
 ```
 python3 generate_list.py
 ```
 
 ## 5 - Generate the Kallisto index
 
+The Kallisto software requests an index obtained from the transcript.fa, by running the following command:
+```
+kallisto index --index=genome_input/kallisto_index genome_input/transcripts.fa
+```
 
+## 6 - generate the job.txt
+
+The generation of this file will allow to run the kallisto software on the indicated samples in parallel:
+```
+./kallisto_make_job.sh input_file_list.txt job.txt
+```
+
+## 7 - kallisto quantification run
+
+Once the following steps have been carried out it will be possible to perform quantitation using the kallisto software by executing the following command:
+```
+./kallisto_run.sh 
+```
+The process will save the Kallisto output in the kallisto_output folder, divided into subfolders for each sample taken into consideration. As well as the kallisto_joblog.txt file in the main folder, which will allow you to check the status of the processes performed.
