@@ -6,10 +6,9 @@ set -o pipefail
 # Get command-line args
 INPUT_LIST=$1
 OUTPUT=$2
-INDEX="/users/rg/gasole/DEG/kallisto_quant/input/kallisto_index"
-CHR="/users/rg/gasole/DEG/kallisto_quant/input/chromosomes.tsv"
-GTF="/users/rg/gasole/DEG/kallisto_quant/input/kallisto.gtf"
-
+INDEX="$(pwd)/genome_input/kallisto_index"
+CHR="$(pwd)/genome_input/chromosomes.tsv"
+GTF="$(pwd)/genome_input/kallisto.gtf"
 
 # Set counter
 COUNT=1
@@ -31,7 +30,7 @@ do
     LINE=( $(awk "NR==$COUNT" $INPUT_LIST) )
     # Make file list
     echo "Working on $COUNT of $END Sample ID: ${LINE[0]}, Files ${LINE[@]:1}"
-    echo "$CMD -o /users/rg/gasole/DEG/kallisto_quant/kallisto_clean/${LINE[0]} ${LINE[@]:1}" >> $OUTPUT
+    echo "$CMD -o $(pwd)/kallisto_output/${LINE[0]} ${LINE[@]:1}" >> $OUTPUT
     ((COUNT++))
 done
 

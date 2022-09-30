@@ -1,2 +1,0 @@
-G01	/Users/asole/Desktop/github/kallisto/sample_input/G01_R1.fastq.gz	/Users/asole/Desktop/github/kallisto/sample_input/G01_R2.fastq.gz
-F58	/Users/asole/Desktop/github/kallisto/sample_input/F58_R1.fastq.gz	/Users/asole/Desktop/github/kallisto/sample_input/F58_R2.fastq.gz
