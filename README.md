@@ -78,3 +78,12 @@ Once the following steps have been carried out it will be possible to perform qu
 ./kallisto_run.sh 
 ```
 The process will save the Kallisto output in the kallisto_output folder, divided into subfolders for each sample taken into consideration. As well as the kallisto_joblog.txt file in the main folder, which will allow you to check the status of the processes performed.
+
+## Citation
+
+Bray, N. L., Pimentel, H., Melsted, P. & Pachter, L.
+Near-optimal probabilistic RNA-seq quantification, 
+Nature Biotechnology 34, 525-527(2016), doi:10.1038/nbt.3519
+
+Tange, O. (2022, September 22). GNU Parallel 20220922 ('Elizabeth').
+Zenodo. https://doi.org/10.5281/zenodo.7105792
