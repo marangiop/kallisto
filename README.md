@@ -46,7 +46,7 @@ Analysis/input/transcript.fa
 
 This step will allow you to create and run a conda environment from which you can use the kallisto software and parallel to run multiple jobs, using the following command from the base directory:
 ```
-conda create --name kallisto kallisto==0.48.0 parallel==20220922
+conda create --name kallisto kallisto==0.48.0
 conda activate kallisto
 ```
 
@@ -73,10 +73,11 @@ The generation of this file will allow to run the kallisto software on the indic
 
 ## 7 - kallisto quantification run
 
-Once the following steps have been carried out it will be possible to perform quantitation using the kallisto software by executing the following command:
+Once the following steps have been carried out it will be possible to perform quantitation using the kallisto software by executing the following command, IMPORTANT fill the script kallisto_run.sh with qsub flags (if required) and with the directory in wich job.txt is stored.
 ```
-./kallisto_run.sh 
+qsub -t 1-{num_of_jobs} path/kallisto_run.sh
 ```
+IMPORTANT replace {num_of_jobs} with your effective number of jobs and path with the same path used in the kallisto_run.sh.
 The process will save the Kallisto output in the kallisto_output folder, divided into subfolders for each sample taken into consideration. As well as the kallisto_joblog.txt file in the main folder, which will allow you to check the status of the processes performed.
 
 ## Citation
