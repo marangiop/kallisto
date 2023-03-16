@@ -88,6 +88,3 @@ The process will save the Kallisto output in the kallisto_output folder, divided
 Bray, N. L., Pimentel, H., Melsted, P. & Pachter, L.
 Near-optimal probabilistic RNA-seq quantification, 
 Nature Biotechnology 34, 525-527(2016), doi:10.1038/nbt.3519
-
-Tange, O. (2022, September 22). GNU Parallel 20220922 ('Elizabeth').
-Zenodo. https://doi.org/10.5281/zenodo.7105792
